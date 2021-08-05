@@ -1,0 +1,46 @@
+.benefit{
+    position: relative;
+    flex: 0 1 49%;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    word-break: break-all;
+    padding: 30px;
+
+    .benefit__text{
+        font-size: 18px;
+        color: #202020;
+        font-weight: 100;
+        transition: all .2s linear;
+        pointer-events: none;
+    }
+
+    .benefit__title{
+        font-size: 60px;
+        margin-top: 10px;
+        font-weight: 700;
+        color: #202020;
+        transition: all .2s linear;
+        pointer-events: none;
+    }
+
+    &:hover{
+        .item__text{
+            color: #fff;
+        }
+        .item__title{
+            color: #fff;
+        }
+    } 
+
+    @media screen and (max-width: 616px) {
+        .benefit__title{
+            font-size: 45px;
+        }
+    }
+
+    @media screen and (max-width: 460px){
+        flex: 0 1 80%;
+        margin: 15px auto;
+    }
+}

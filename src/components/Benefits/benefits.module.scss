@@ -1,0 +1,28 @@
+.benefits{
+    position: relative;
+    max-width: 35%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: transparent;
+    animation-name: benefits-appearance;
+    animation-duration: 2s;
+
+    @media screen and (max-width: 1250px) {
+        max-width: 40%;
+    }
+
+    @media screen and (max-width: 995px){
+        display: none;
+    }
+}
+
+@keyframes benefits-appearance{
+    0%{
+        margin-right: -100vw;  
+    }
+    100%{
+        margin-right: 0vw;    
+    }
+}

@@ -1,0 +1,219 @@
+.header{
+    background: rgba(0,0,0,.2);
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #36343b;
+
+    margin: 0 auto;
+    animation-name: header-appearance;
+    animation-duration: 1s;
+}
+
+.container{
+    width: 100%;
+    max-width: 1270px;
+    padding: 0px 25px 0px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (max-width: 375px) {
+        padding: 0px 10px 0px 10px;
+    }
+}
+
+.company_brand{
+    position: relative;
+    border-left: 1px solid #36343b;
+    border-right: 1px solid #36343b;
+    padding: 30px 25px 30px 25px;
+
+    &:before, &:after{
+        content:'';
+        position:absolute;
+        height: 6px;
+        width: 6px;
+    }
+
+    &:before{
+        position: absolute;
+        top: 0;
+        right:0;
+        margin-top: -1px;
+        margin-right: -1px;
+        border-right: 1px solid #fff;
+        border-top: 1px solid #fff;
+    }
+
+    &:after{
+        position: absolute;
+        bottom: 0;
+        left:0;
+        margin-bottom: -1px;
+        margin-left: -1px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+    }
+
+    .brand{
+        &:before, &:after{
+            content:'';
+            position:absolute;
+            height: 6px;
+            width: 6px;
+        }
+    
+        &:before{
+            position: absolute;
+            top: 0;
+            left:0;
+            margin-top: -1px;
+            margin-left: -1px;
+            border-left: 1px solid #fff;
+            border-top: 1px solid #fff;
+        }
+    
+        &:after{
+            position: absolute;
+            bottom: 0;
+            right:0;
+            margin-bottom: -1px;
+            margin-right: -1px;
+            border-right: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+    }
+
+    .brand__image{
+        pointer-events: none;
+    }
+
+    @media screen and (max-width: 1062px) {
+        &:before, &:after, .brand{
+            display: none;
+        }
+
+        border-left: none;
+        border-right: none;
+        padding: 25px 0px 25px 0px;
+    }
+}
+
+.nav{
+    .nav__link{
+        color: #fff;
+        font-size: 17px;
+        font-weight: 300;
+        margin: 0px 19px;
+        transition: all .2s linear;
+        
+        &:hover{
+            padding-bottom: 10px;
+            color: #b1b1b1;
+            border-bottom: 1px solid #b1b1b1;
+        }
+        
+    }
+
+    .close_menu{
+        display: none;
+        color: #fff;
+
+    }
+    
+    @media screen and (max-width: 995px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right:0;
+        z-index: 100000;
+        background: #0F0F0F;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        overflow: auto;
+        transform: translate(0%,-100%);
+        transition: all .2s linear;
+
+        .nav__link{
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .close_menu{
+            display: flex;
+            top: 0;
+            font-size: 50px;
+            padding: 5px 20px;
+            margin-bottom: 10px;
+            transition: all .2s linear;
+            cursor: pointer;
+            &:hover,&:focus,&:active{
+                transform: scale(1.5);
+            }
+        }
+        
+    }
+
+    @media screen and (max-height: 331px) {
+        .nav__link{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .close_menu{
+            font-size: 40px;
+            padding: 0px 20px;
+        }
+    }
+}
+
+.active{
+    transition: all .2s linear;
+    transform: translate(0%,0%) !important;
+}
+
+.bar{
+    display: none;
+    cursor: pointer;
+    transition: all .2s linear;
+
+    &:hover,&:focus,&:active{
+        transform: scale(1.2);
+    }
+    @media screen and (max-width: 995px) {
+        &{
+            color: #fff;
+            display: flex;
+            font-size: 27px;
+            margin-left: 30px;
+        }
+    }
+    @media screen and (max-width: 375px) {
+        &{
+            margin-left: 0px;
+        }
+    }
+
+    
+}
+
+@keyframes header-appearance{
+    0%{
+        top:-50vh;  
+    }
+    100%{
+        top: 0;  
+    }
+} 

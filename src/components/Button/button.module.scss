@@ -1,0 +1,68 @@
+.button{
+    font-family: 'Museo Sans Cyrl';
+    position: relative;
+    background: transparent;
+    border: 1px solid transparent;
+    border-image: linear-gradient(to left top, #0a203d ,  #23599c , #23599c, #0a203d ) 30;
+    border-image-slice: 1;
+    color: #828388;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 100;
+    z-index: 1;
+
+    transition: all .2s linear;
+    cursor: pointer;
+
+    &:before, &:after{
+        content:'';
+        position:absolute;
+        background: rgba(255,255,255,.1);
+        height: 5px;
+        width: 5px;
+    }
+    &:before{
+        position: absolute;
+        top: 0;
+        right:0;
+        margin-top: -1px;
+        margin-right: -1px;
+        border-right: 1px solid #fff;
+        border-top: 1px solid #fff;
+        box-shadow: 2px 5px 16px #fff;
+    }
+
+    &:after{
+        position: absolute;
+        bottom: 0;
+        left:0;
+        margin-bottom: -1px;
+        margin-left: -1px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        box-shadow: 2px 5px 16px #fff;
+    }
+
+    &:hover{
+        background: #fff;
+        color: #23599c;
+        box-shadow: 0px 0px 16px #fff;
+        border-image: none;
+        border: 1px solid #fff;
+
+        &:before{
+            display: none;
+        }
+    
+        &:after{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 995px) {
+    .button{
+        color: #fff;
+        font-size: 18px;
+    }
+}
